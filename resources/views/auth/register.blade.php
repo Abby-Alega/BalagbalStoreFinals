@@ -15,7 +15,7 @@
                 <p>Join Balagbal Store today</p>
             </div>
 
-            <form action="#" method="POST" class="register-form">
+            <form action="{{ route('register') }}" method="POST" class="register-form">
                 @csrf
                 
                 <div class="form-row">
@@ -46,8 +46,8 @@
                         <input type="password" id="password" name="password" placeholder="Create a password" required>
                     </div>
                     <div class="form-group">
-                        <label for="confirm_password">Confirm Password</label>
-                        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+                        <label for="password_confirmation">Confirm Password</label>
+                        <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirm your password" required>
                     </div>
                 </div>
 
