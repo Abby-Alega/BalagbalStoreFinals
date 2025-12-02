@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::create('order_details', function (Blueprint $table) {
             $table->id();
-            // table names start
             $table->integer('order_id');
             $table->integer('product_id');
             $table->integer('quantity');
             $table->decimal('unit_price', 10, 2);
             $table->decimal('subtotal', 12, 2);
-            // table names end
             $table->timestamps();
         });
     }

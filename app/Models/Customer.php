@@ -21,11 +21,13 @@ class Customer extends Model
         'address',
     ];
 
+    // Customer → User: Many customers belong to one user (M:1)
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
+    // Customer → Orders: One customer can have many orders (1:M)
     public function orders()
     {
         return $this->hasMany(Order::class);

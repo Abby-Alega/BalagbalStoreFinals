@@ -13,17 +13,12 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            // table names start
             $table->integer('customer_id');
-            // Order date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             $table->timestamp('order_date')->useCurrent();
-            // Order status status ENUM('pending', 'processing', 'completed', 'cancelled')
             $table->enum('order_status', ['pending', 'processing', 'completed', 'cancelled'])->default('pending');
             $table->decimal('total_amount', 12, 2);
-            // Payment status ENUM('pending', 'paid', 'failed')
             $table->enum('payment_status', ['pending', 'paid', 'failed'])->default('pending');
-            // table names end
-            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+            $table->timestamps();
         });
     }
 

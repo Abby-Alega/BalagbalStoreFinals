@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'name',
         'description',
@@ -16,11 +19,5 @@ class Category extends Model
     public function products()
     {
         return $this->hasMany(Product::class);
-    }
-
-    // Products → Inventory: One product has one inventory record (1:1)
-    public function inventory()
-    {
-        return $this->hasOne(Inventory::class);
     }
 }

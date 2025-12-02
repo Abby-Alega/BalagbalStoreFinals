@@ -13,16 +13,13 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            // table names start
             $table->string('name', 200);
             $table->text('description');
             $table->integer('category_id');
             $table->decimal('cost_price', 10, 2);
             $table->decimal('unit_price', 10, 2);
             $table->boolean('is_active')->default(true);
-            // table names end
             $table->timestamps();
-            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 
